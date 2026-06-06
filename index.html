@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html><html lang="id" translate="no"><head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -853,7 +856,7 @@
 <!--end::Head-->
 <!--begin::Body-->
 
-<body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' id="kt_body" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100" class="bg-primary" data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0" data-kt-scrolltop="on" style="">
+<body id="kt_body" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100" class="bg-primary" data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0" data-kt-scrolltop="on" style="">
     <div class="preloader" style="display: none;">
         <div class="loading">
             <div class="spinner-border text-primary" role="status">
@@ -1704,11 +1707,11 @@ shouldScroll = true;
 }
 function pageScroll()
 {
-const step = 15;               // Kecepatan
-const delay = 20;               // Animasi 
+const step = 5;               // Kecepatan
+const delay = 10;               // Animasi 
 const timer = setInterval(() => { 
   const maxY = document.documentElement.scrollHeight - window.innerHeight; 
-  window.scrollBy({ top: step, left: 0, behavior: 'smooth' }); 
+  window.scrollBy({ top: step, left: 0, behavior: 'auto' }); 
   if (window.scrollY >= maxY) clearInterval(timer); 
 }, delay);
 
@@ -1765,17 +1768,37 @@ const timer = setInterval(() => {
     }
 </script>
 
+
+<section>
+<div id="audio-container">
 <audio id="song" autoplay="" loop="">
 <source src="video-musik/musik.mp3" type="audio/mp3">
 </audio>
-<script type="text/javascript">
-    function copyFromData(button) {
-        const value = button.dataset.rekening;
-        navigator.clipboard.writeText(value)
-            .then(() => toastr.success("Berhasil menyalin ke clipboard!"))
-            .catch(() => toastr.error("Gagal menyalin"));
-    }
+<div class="audio-icon-wrapper">
+<img src="img/icon-logo/musik-icon.gif" style="border: 1px solid rgb(0, 222, 252); border-radius: 30%;">
+</div></div>
+
+<script>
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const song = document.querySelector('#song');
+    let isPlaying = false;
+
+    function playAudio() {
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;}
+
+    audioIconWrapper.onclick = function () {
+      if (isPlaying) {
+        song.pause();} 
+        else {
+        song.play();}
+
+      isPlaying = !isPlaying;}
 </script>
+</section>
+
+
 
     <script type="text/javascript">
         let players = {};
@@ -1977,35 +2000,6 @@ const timer = setInterval(() => {
     namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, 'YTH');
    </script>
 <!--=============AKHIR_NAMA_TAMU=============!-->
-
-<section>
-<div id="audio-container">
-<audio id="song" autoplay="" loop="">
-<source src="video-musik/musik.mp3" type="audio/mp3">
-</audio>
-<div class="audio-icon-wrapper">
-<img src="img/icon-logo/musik-icon.gif" style="border: 1px solid rgb(0, 222, 252); border-radius: 30%;">
-</div></div>
-
-<script>
-    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-    const song = document.querySelector('#song');
-    let isPlaying = false;
-
-    function playAudio() {
-      audioIconWrapper.style.display = 'flex';
-      song.play();
-      isPlaying = true;}
-
-    audioIconWrapper.onclick = function () {
-      if (isPlaying) {
-        song.pause();} 
-        else {
-        song.play();}
-
-      isPlaying = !isPlaying;}
-</script>
-</section>
 
 
 </b></b></div></div></div></div></div></div></body></html>
