@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html><html lang="id" translate="no"><head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -1700,26 +1698,6 @@ DANA{
     });
 </script>
 
-
-<script type="text/javascript">
-{
-shouldScroll = true;
-}
-function pageScroll()
-{
-const step = 5;               // Kecepatan
-const delay = 10;               // Animasi 
-const timer = setInterval(() => { 
-  const maxY = document.documentElement.scrollHeight - window.innerHeight; 
-  window.scrollBy({ top: step, left: 0, behavior: 'auto' }); 
-  if (window.scrollY >= maxY) clearInterval(timer); 
-}, delay);
-
-}
-    document.addEventListener('DOMContentLoaded', function () {
-        if (shouldScroll) pageScroll();
-    })
-</script>
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -2000,6 +1978,77 @@ const timer = setInterval(() => {
     namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, 'YTH');
    </script>
 <!--=============AKHIR_NAMA_TAMU=============!-->
+
+
+<!--====AWAL_TOMCOL_AUTO_SCROLL====!-->
+
+<style>
+  #kontrolScroll {
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    padding: 0px 5px;
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+    border: solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 1;  // ubah dari 1 jadi (9999) bila ingin selalu berada diatas
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  #kontrolScroll:hover {
+    background-color: black;
+  }
+  #kontrolScroll.paused {
+    background-color: red;
+  }
+</style>
+
+<!--====AKHIR_TOMCOL_AUTO_SCROLL====!-->
+
+
+
+<!--====AWAL_SCH_AUTO_SCROLL====!-->
+
+<button id="kontrolScroll" onclick="toggleScroll()">Mulai Scroll</button>
+<!-- ini untuk memunculkan Tombol -->
+
+<script>
+  let scrollInterval;
+  let isScrolling = false;
+  
+  function toggleScroll() {
+    const tombol = document.getElementById('kontrolScroll');
+    
+    if (isScrolling) {
+      // Jika sedang berjalan, hentikan (pause)
+      clearInterval(scrollInterval);
+      tombol.innerText = 'Mulai Scroll';
+      tombol.classList.remove('paused');
+      isScrolling = false;
+    } else {
+      // Jika berhenti, jalankan auto scroll
+      scrollInterval = setInterval(() => {
+        window.scrollBy(0, 10); // Kecepatan: 1 piksel per interval
+        
+        // Berhenti otomatis jika mencapai bagian paling bawah halaman
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+          clearInterval(auto);
+          tombol.innerText = 'Mulai Scroll';
+          tombol.classList.remove('paused');
+          isScrolling = false;
+        }
+      }, 15); // Interval dalam milidetik (semakin kecil, semakin cepat)
+      
+      tombol.innerText = 'Stop';
+      tombol.classList.add('paused');
+      isScrolling = true;
+    }
+  }
+</script>
+
+<!--====AKHIR_SCH_AUTO_SCROLL====!-->
 
 
 </b></b></div></div></div></div></div></div></body></html>
