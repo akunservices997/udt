@@ -2030,7 +2030,7 @@ DANA{
     } else {
       // Jika berhenti, jalankan auto scroll
       scrollInterval = setInterval(() => {
-        window.scrollBy(0, 100); // Kecepatan: 1 piksel per interval
+        window.scrollBy(0, 3); // Kecepatan: 1 piksel per interval
         
         // Berhenti otomatis jika mencapai bagian paling bawah halaman
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
@@ -2039,7 +2039,7 @@ DANA{
           tombol.classList.remove('paused');
           isScrolling = false;
         }
-      }, -50); // Interval dalam milidetik (semakin kecil, semakin cepat)
+      }, 30); // Interval dalam milidetik (semakin kecil, semakin cepat)
       
       tombol.innerText = 'Stop';
       tombol.classList.add('paused');
