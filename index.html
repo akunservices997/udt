@@ -1477,7 +1477,7 @@ DANA{
 
 <span class="fw-light">Powered &amp; Designed by</span><br>
 <a href="https://api.whatsapp.com/send/?phone=628990073730&amp;text=TRISAND+SERVICE" target="_blank" "="" class="text-light fw-light">TRISAND Undangan Digital<br><font color="blue">Klik Untuk Hubungi Saya</font></a>
-<br><br>
+<br><br><br>
 </div>
 </div>
 </b></b></div><b><b>
@@ -1985,8 +1985,9 @@ DANA{
 <style>
   #kontrolScroll {
     position: fixed;
-    top: 5px;
-    right: 10px;
+    top: #px;
+    right: 100px;
+    bottom: 37px;
     padding: 0px 5px;
     font-size: 15px;
     background-color: blue;
@@ -2011,7 +2012,7 @@ DANA{
 
 <!--====AWAL_SCH_AUTO_SCROLL====!-->
 
-<button id="kontrolScroll" onclick="toggleScroll()">Mulai Scroll</button>
+<button id="kontrolScroll" onclick="toggleScroll()">Mulai Scroll<br>Otomatis</button>
 <!-- ini untuk memunculkan Tombol -->
 
 <script>
@@ -2030,7 +2031,7 @@ DANA{
     } else {
       // Jika berhenti, jalankan auto scroll
       scrollInterval = setInterval(() => {
-        window.scrollBy(0, 3); // Kecepatan: 1 piksel per interval
+        window.scrollBy(0, 3); // Kecepatan: (semakin besar, semakin cepat)
         
         // Berhenti otomatis jika mencapai bagian paling bawah halaman
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
@@ -2041,7 +2042,7 @@ DANA{
         }
       }, 30); // Interval dalam milidetik (semakin kecil, semakin cepat)
       
-      tombol.innerText = 'Stop';
+      tombol.innerText = 'Stop. Scroll Dengan Jari Saja';
       tombol.classList.add('paused');
       isScrolling = true;
     }
