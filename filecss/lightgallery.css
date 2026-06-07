@@ -24,17 +24,17 @@
 
 .lg-actions .lg-next, .lg-actions .lg-prev {
   background-color: rgba(0, 0, 0, 0.45);
-  border-radius: 2px;
+  border-radius: 20px;
   color: #999;
   cursor: pointer;
   display: block;
-  font-size: 22px;
+  font-size: 20px;
   margin-top: -10px;
   padding: 8px 10px 9px;
   position: absolute;
   top: 50%;
   z-index: 1080;
-  border: none;
+  border: dotted red;
   outline: none;
 }
 .lg-actions .lg-next.disabled, .lg-actions .lg-prev.disabled {
@@ -45,16 +45,16 @@
   color: #FFF;
 }
 .lg-actions .lg-next {
-  right: 20px;
+  right: 10px;
 }
 .lg-actions .lg-next:before {
-  content: "\e095";
+  content: "lanjut";
 }
 .lg-actions .lg-prev {
-  left: 20px;
+  left: 10px;
 }
 .lg-actions .lg-prev:after {
-  content: "\e094";
+  content: "kembali";
 }
 
 @-webkit-keyframes lg-right-end {
@@ -170,16 +170,17 @@
   color: #999;
   cursor: pointer;
   float: right;
-  font-size: 24px;
+  font-size: 25px;
   height: 47px;
   line-height: 27px;
-  padding: 10px 0;
+  padding: 0px 0;
   text-align: center;
-  width: 50px;
+  width: 100px;
+  border-radius: 20px;
   text-decoration: none !important;
   outline: medium none;
   background: none;
-  border: none;
+  border: dotted red;
   box-shadow: none;
   -webkit-transition: color 0.2s linear;
   -o-transition: color 0.2s linear;
@@ -189,10 +190,10 @@
   color: #FFF;
 }
 .lg-toolbar .lg-close:after {
-  content: "\e070";
+  content: "Keluar";
 }
 .lg-toolbar .lg-download:after {
-  content: "\e0f2";
+  content: "Keluar";
 }
 
 .lg-sub-html {
@@ -352,23 +353,23 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .lg-outer .lg-toogle-thumb {
   background-color: #0D0A0A;
-  border-radius: 2px 2px 0 0;
+  border-radius: 20px;
   color: #999;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
   height: 39px;
   line-height: 27px;
-  padding: 5px 0;
+  padding: 0px 0;
   position: absolute;
   right: 20px;
   text-align: center;
   top: -39px;
-  width: 50px;
+  width: 120px;
   outline: medium none;
-  border: none;
+  border: dotted red;
 }
 .lg-outer .lg-toogle-thumb:after {
-  content: "\e1ff";
+  content: "sembunyikan";
 }
 .lg-outer .lg-toogle-thumb:hover {
   color: #FFF;
